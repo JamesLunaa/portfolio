@@ -24,31 +24,22 @@
 <body>
   <a class="skip" href="#work">Skip to projects</a>
 
+  <header class="topbar">
+    <a class="wordmark" href="#top">James</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to day theme">Day</button>
+    </nav>
+  </header>
+
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <header class="topbar">
-        <a class="wordmark" href="#top">James</a>
-        <nav aria-label="Sections">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <button class="theme-toggle" type="button" aria-label="Switch to day theme">Day</button>
-        </nav>
-      </header>
-
-      <h1 id="hero-title" class="statement lines">
-        <span class="line line-one"><span data-line style="--i:0">Pro gamer</span></span>
-        <span class="line line-two"><span data-line style="--i:1">prog<span class="added">r</span>am<span class="added">m</span>er.</span></span>
-      </h1>
-
-      <div class="hero-foot">
-        <p class="hero-lead">I’m James, a Laravel developer in the Philippines who meant to go pro at games.</p>
-        <a class="button" href="#work">See my projects</a>
+    <section id="work" class="hero" aria-labelledby="hero-title">
+      <div class="title-screen">
+        <h1 id="hero-title" class="title lines"><span class="line"><span data-line style="--i:0">James</span></span></h1>
+        <p class="title-sub">Laravel developer in the Philippines. Pick a project to watch it run.</p>
       </div>
-    </section>
-
-    <section id="work" class="work" aria-labelledby="work-title">
-      <h2 id="work-title" class="section-title">Open-source work</h2>
 
       <div class="work-grid">
         <ol class="projects" role="list">
@@ -56,7 +47,7 @@
             <video class="project-video" muted loop playsinline preload="none" poster="assets/video/taskora.jpg" width="1920" height="1080" aria-label="Taskora demo video">
               <source src="assets/video/taskora.mp4" type="video/mp4">
             </video>
-            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Taskora</button></h3>
+            <h2 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Taskora</button></h2>
             <p class="project-meta">Android to-do app · Kotlin, Compose · 2026</p>
             <div class="project-more">
               <div>
@@ -69,7 +60,7 @@
             <video class="project-video" muted loop playsinline preload="none" poster="assets/video/monetra.jpg" width="1920" height="1080" aria-label="Monetra demo video">
               <source src="assets/video/monetra.mp4" type="video/mp4">
             </video>
-            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Monetra</button></h3>
+            <h2 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Monetra</button></h2>
             <p class="project-meta">Android money tracker · Kotlin, Compose · 2026</p>
             <div class="project-more">
               <div>
@@ -82,7 +73,7 @@
             <video class="project-video" muted loop playsinline preload="none" poster="assets/video/view-dock.jpg" width="1920" height="1080" aria-label="view-dock demo video">
               <source src="assets/video/view-dock.mp4" type="video/mp4">
             </video>
-            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">view-dock</button></h3>
+            <h2 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">view-dock</button></h2>
             <p class="project-meta">Linux second screen · Python, Swift, Kotlin · 2026</p>
             <div class="project-more">
               <div>
@@ -95,7 +86,7 @@
             <video class="project-video" muted loop playsinline preload="none" poster="assets/video/meshircd.jpg" width="1920" height="1080" aria-label="meshircd demo video">
               <source src="assets/video/meshircd.mp4" type="video/mp4">
             </video>
-            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">meshircd</button></h3>
+            <h2 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">meshircd</button></h2>
             <p class="project-meta">IRC server · Python standard library · 2026</p>
             <div class="project-more">
               <div>
@@ -111,7 +102,10 @@
         </div>
       </div>
 
-      <p class="work-note">Four open-source projects from 2026, plus private Laravel web projects I can’t show here.</p>
+      <div class="hero-foot">
+        <p class="work-note">Four open-source projects from 2026, plus private Laravel web projects I can’t show here.</p>
+        <a class="press-start" href="#about">Press start <span aria-hidden="true">↓</span></a>
+      </div>
     </section>
 
     <section id="about" class="about" aria-label="About">
@@ -146,13 +140,24 @@
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-label="Contact">
-      <p class="contact-ask">Got a project, a bug, or a game worth talking about? Write to me.</p>
-      <a class="email" href="mailto:josecynonluna03@gmail.com"><span>josecynonluna03@</span><span>gmail.com</span></a>
-      <div class="contact-foot">
-        <p>Philippines</p>
-        <a href="https://github.com/JamesLunaa">github.com/JamesLunaa</a>
-      </div>
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="continue lines"><span class="line"><span data-line style="--i:0">Continue?</span></span></h2>
+
+      <ul class="choices" role="list">
+        <li class="choice is-active">
+          <a class="choice-name" href="mailto:josecynonluna03@gmail.com">Email me</a>
+          <span class="choice-detail">
+            <span>josecynonluna03@gmail.com</span>
+            <button class="copy" type="button" data-copy="josecynonluna03@gmail.com" aria-live="polite">Copy</button>
+          </span>
+        </li>
+        <li class="choice">
+          <a class="choice-name" href="https://github.com/JamesLunaa">GitHub</a>
+          <span class="choice-detail"><span>github.com/JamesLunaa</span></span>
+        </li>
+      </ul>
+
+      <p class="contact-ask">Got a project, a bug, or a game worth talking about? I read everything that lands in my inbox.</p>
     </section>
   </main>
 

@@ -66,6 +66,49 @@
   });
   activate(0);
 
+  /* Arrow keys move through the menu, like a game's level select */
+  document.querySelector('.projects').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    var next = (active + (e.key === 'ArrowDown' ? 1 : projects.length - 1)) % projects.length;
+    projects[next].querySelector('.project-pick').focus();
+  });
+
+  /* Contact: the same menu feel as the start screen */
+  var choices = Array.prototype.slice.call(document.querySelectorAll('.choice'));
+  choices.forEach(function (choice) {
+    function select() {
+      choices.forEach(function (c) { c.classList.toggle('is-active', c === choice); });
+    }
+    choice.addEventListener('mouseenter', select);
+    choice.addEventListener('focusin', select);
+  });
+  document.querySelector('.choices').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    var i = choices.findIndex(function (c) { return c.classList.contains('is-active'); });
+    choices[(i + 1) % choices.length].querySelector('.choice-name').focus();
+  });
+
+  var copy = document.querySelector('.copy');
+  copy.addEventListener('click', function () {
+    var done = function (label) {
+      copy.textContent = label;
+      setTimeout(function () { copy.textContent = 'Copy'; }, 1800);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(copy.dataset.copy).then(function () { done('Copied'); }, function () { done('Press Ctrl+C'); });
+    } else {
+      done('Press Ctrl+C');
+    }
+  });
+
+  /* Stagger the start screen's entrance */
+  var r = 0;
+  document.querySelectorAll('.title-sub, .hero .project, .hero .frame, .hero-foot > *').forEach(function (el) {
+    el.style.setProperty('--r', r++);
+  });
+
   /* Pause the frame when the work section leaves the screen */
   if ('IntersectionObserver' in window) {
     var work = document.getElementById('work');
@@ -104,9 +147,8 @@
 
   /* Section entrances: heading, then text, then the rest */
   var groups = [
-    ['#work .section-title', '#work .project', '#work .frame', '#work .work-note'],
     ['#about .facts > div', '#about .about-text', '#about .record-label', '#about .record li'],
-    ['#contact .contact-ask', '#contact .email span', '#contact .contact-foot > *'],
+    ['#contact .choice', '#contact .contact-ask'],
     ['.footer-cols ul', '.footer-mark']
   ];
   var revealables = [];
