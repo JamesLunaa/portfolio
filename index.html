@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James — Developer</title>
+  <meta name="description" content="James is a developer in the Philippines who meant to go pro at games and builds open-source apps instead: Taskora, Monetra, view-dock and meshircd.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E0C13">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <header class="topbar">
+        <a class="wordmark" href="#top">James</a>
+        <nav aria-label="Sections">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to day theme">Day</button>
+        </nav>
+      </header>
+
+      <h1 id="hero-title" class="statement lines">
+        <span class="line line-one"><span data-line style="--i:0">Pro gamer</span></span>
+        <span class="line line-two"><span data-line style="--i:1">prog<span class="added">r</span>am<span class="added">m</span>er.</span></span>
+      </h1>
+
+      <div class="hero-foot">
+        <p class="hero-lead">I’m James, a Laravel developer in the Philippines who meant to go pro at games.</p>
+        <a class="button" href="#work">See my projects</a>
+      </div>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <h2 id="work-title" class="section-title">Open-source work</h2>
+
+      <div class="work-grid">
+        <ol class="projects" role="list">
+          <li class="project" data-project="taskora">
+            <video class="project-video" muted loop playsinline preload="none" poster="assets/video/taskora.jpg" width="1920" height="1080" aria-label="Taskora demo video">
+              <source src="assets/video/taskora.mp4" type="video/mp4">
+            </video>
+            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Taskora</button></h3>
+            <p class="project-meta">Android to-do app · Kotlin, Compose · 2026</p>
+            <div class="project-more">
+              <div>
+                <p>A to-do list for Android with reminders, recurring tasks and a home-screen widget. It doesn’t even ask for internet permission: no account, no ads, no tracking.</p>
+                <a class="project-link" href="https://github.com/JamesLunaa/taskora">Taskora on GitHub</a>
+              </div>
+            </div>
+          </li>
+          <li class="project" data-project="monetra">
+            <video class="project-video" muted loop playsinline preload="none" poster="assets/video/monetra.jpg" width="1920" height="1080" aria-label="Monetra demo video">
+              <source src="assets/video/monetra.mp4" type="video/mp4">
+            </video>
+            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">Monetra</button></h3>
+            <p class="project-meta">Android money tracker · Kotlin, Compose · 2026</p>
+            <div class="project-more">
+              <div>
+                <p>Log income and expenses in a few taps, set budgets, and keep track of who owes whom. The math is exact to the centavo, and nothing leaves your phone.</p>
+                <a class="project-link" href="https://github.com/JamesLunaa/monetra">Monetra on GitHub</a>
+              </div>
+            </div>
+          </li>
+          <li class="project" data-project="view-dock">
+            <video class="project-video" muted loop playsinline preload="none" poster="assets/video/view-dock.jpg" width="1920" height="1080" aria-label="view-dock demo video">
+              <source src="assets/video/view-dock.mp4" type="video/mp4">
+            </video>
+            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">view-dock</button></h3>
+            <p class="project-meta">Linux second screen · Python, Swift, Kotlin · 2026</p>
+            <div class="project-more">
+              <div>
+                <p>Turns an iPad or an Android tablet into a real extended monitor for Linux, over Wi-Fi or USB. Drag a window off the edge of the screen and it lands on the tablet.</p>
+                <a class="project-link" href="https://github.com/JamesLunaa/view-dock">view-dock on GitHub</a>
+              </div>
+            </div>
+          </li>
+          <li class="project" data-project="meshircd">
+            <video class="project-video" muted loop playsinline preload="none" poster="assets/video/meshircd.jpg" width="1920" height="1080" aria-label="meshircd demo video">
+              <source src="assets/video/meshircd.mp4" type="video/mp4">
+            </video>
+            <h3 class="project-name"><button type="button" class="project-pick" aria-controls="project-frame">meshircd</button></h3>
+            <p class="project-meta">IRC server · Python standard library · 2026</p>
+            <div class="project-more">
+              <div>
+                <p>An IRC server with zero dependencies: just asyncio, ssl, sqlite3 and hashlib. Real clients connect normally, with SASL over TLS, IRCv3 and host cloaking on by default.</p>
+                <a class="project-link" href="https://github.com/JamesLunaa/meshircd">meshircd on GitHub</a>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="frame-col" aria-hidden="true">
+          <div class="frame" id="project-frame"></div>
+        </div>
+      </div>
+
+      <p class="work-note">Four open-source projects from 2026, plus private Laravel web projects I can’t show here.</p>
+    </section>
+
+    <section id="about" class="about" aria-label="About">
+      <div class="about-row">
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Philippines</dd></div>
+          <div><dt>Now</dt><dd>Working as a developer</dd></div>
+          <div><dt>Main stack</dt><dd>Laravel VILT</dd></div>
+        </dl>
+        <div class="about-copy">
+          <p class="about-text">I wanted to be a pro gamer. I became a programmer instead, mostly out of curiosity about how things work under the screen.</p>
+          <p class="about-body">By day I build web apps on Laravel, Vue, Inertia and Tailwind. The rest of the time I build apps for fun, usually to learn something I didn’t know the week before. Android is newer ground for me: I build those apps with an AI pair programmer and pick up Kotlin as I go.</p>
+        </div>
+      </div>
+
+      <div class="about-row about-record">
+        <p class="record-label">Stack</p>
+        <ul class="record" aria-label="Web stack">
+          <li><span>Laravel</span><span>daily</span></li>
+          <li><span>Vue</span><span>daily</span></li>
+          <li><span>Inertia</span><span>daily</span></li>
+          <li><span>Tailwind CSS</span><span>daily</span></li>
+          <li><span>PHP</span><span>daily</span></li>
+        </ul>
+        <ul class="record" aria-label="Side-project stack">
+          <li><span>Python</span><span>meshircd, view-dock</span></li>
+          <li><span>Kotlin, Compose</span><span>with an AI pair</span></li>
+          <li><span>Swift</span><span>view-dock</span></li>
+          <li><span>Docker</span><span>meshircd</span></li>
+          <li><span>Arch Linux</span><span>home</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-label="Contact">
+      <p class="contact-ask">Got a project, a bug, or a game worth talking about? Write to me.</p>
+      <a class="email" href="mailto:josecynonluna03@gmail.com"><span>josecynonluna03@</span><span>gmail.com</span></a>
+      <div class="contact-foot">
+        <p>Philippines</p>
+        <a href="https://github.com/JamesLunaa">github.com/JamesLunaa</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <ul>
+        <li>Projects</li>
+        <li><a href="https://github.com/JamesLunaa/taskora">Taskora</a></li>
+        <li><a href="https://github.com/JamesLunaa/monetra">Monetra</a></li>
+        <li><a href="https://github.com/JamesLunaa/view-dock">view-dock</a></li>
+        <li><a href="https://github.com/JamesLunaa/meshircd">meshircd</a></li>
+      </ul>
+      <ul>
+        <li>Elsewhere</li>
+        <li><a href="https://github.com/JamesLunaa">GitHub</a></li>
+        <li><a href="mailto:josecynonluna03@gmail.com">Email</a></li>
+      </ul>
+      <ul>
+        <li>This page</li>
+        <li><a href="#top">Back to top</a></li>
+        <li>Plain HTML on GitHub Pages</li>
+      </ul>
+      <ul>
+        <li>Based in</li>
+        <li>Philippines</li>
+      </ul>
+    </div>
+    <svg class="footer-mark" viewBox="0 0 1000 300" role="img" aria-label="James">
+      <text x="500" y="262" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">James</text>
+    </svg>
+    <p class="legal">© 2026 James</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
