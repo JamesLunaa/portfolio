@@ -168,14 +168,19 @@ main { position: relative; z-index: 1; background: var(--ground); transition: ba
   .js .project-pick { color: var(--muted); }
   .js .project.is-active .project-pick { color: var(--ink); }
   .js .project-pick:hover { color: var(--ink); }
-  .js .project-more {
-    display: grid; grid-template-rows: 0fr;
-    transition: grid-template-rows 450ms var(--ease-out);
+  /* The open project's description sits under the frame, so the menu stays a list of names */
+  .js .project-more { display: none; }
+  .frame-caption { display: grid; margin-top: 4px; }
+  .caption-item {
+    grid-area: 1 / 1;
+    visibility: hidden; opacity: 0; transform: translateY(8px);
+    transition: opacity 250ms ease, transform 400ms var(--ease-out), visibility 0s linear 250ms;
   }
-  .js .project-more > div { overflow: hidden; }
-  .js .project.is-active .project-more { grid-template-rows: 1fr; }
-  .js .project-more > div > * { opacity: 0; transition: opacity 300ms ease; }
-  .js .project.is-active .project-more > div > * { opacity: 1; transition-delay: 120ms; }
+  .caption-item.is-active {
+    visibility: visible; opacity: 1; transform: none;
+    transition: opacity 300ms ease 100ms, transform 400ms var(--ease-out) 100ms, visibility 0s;
+  }
+  .caption-item p { max-width: 60ch; }
   .js .projects { padding-left: 0.9em; }
   .js .project-pick::before {
     content: ""; position: absolute; left: -0.62em; top: 50%;
@@ -194,6 +199,7 @@ main { position: relative; z-index: 1; background: var(--ground); transition: ba
   .work-grid { display: block; }
   .frame-col { display: none; }
   .project + .project { margin-top: 64px; }
+  .frame-caption { display: none; }
   .project-name { margin-top: 16px; font-size: clamp(2.5rem, 11vw, 4rem); }
   .project-pick { cursor: default; padding: 0; }
 }

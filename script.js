@@ -32,6 +32,14 @@
     return clone;
   });
 
+  var caption = document.querySelector('.frame-caption');
+  var captionItems = projects.map(function (project) {
+    var item = project.querySelector('.project-more > div').cloneNode(true);
+    item.className = 'caption-item';
+    caption.appendChild(item);
+    return item;
+  });
+
   function playSafely(video) {
     if (reduceMotion.matches) return;
     var p = video.play();
@@ -48,6 +56,7 @@
       project.querySelector('.project-pick').setAttribute('aria-pressed', on ? 'true' : 'false');
       var video = frameVideos[i];
       video.classList.toggle('is-active', on);
+      captionItems[i].classList.toggle('is-active', on);
       if (!wide.matches) return;
       if (on) {
         if (video.preload === 'none') { video.preload = 'auto'; video.load(); }
